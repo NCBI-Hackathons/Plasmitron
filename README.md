@@ -4,12 +4,12 @@
 Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 
  ## Table of Contents
-* [Quickstart](https://github.com/NCBI-Hackathons/Plasmitron.git#Quickstart)
-* [Intro](https://github.com/NCBI-Hackathons/Plasmitron.git#Intro)
-* [Help](https://github.com/NCBI-Hackathons/Plasmitron.git#Help)
-* [Inputs](https://github.com/NCBI-Hackathons/Plasmitron.git#Inputs)
-* [Outputs](https://github.com/NCBI-Hackathons/Plasmitron.git#Outputs)
-* [WorkFlow](https://github.com/NCBI-Hackathons/Plasmitron.git#WorkFlow)
+* [Intro](https://github.com/NCBI-Hackathons/Plasmitron.git#intro)
+* [Quickstart](https://github.com/NCBI-Hackathons/Plasmitron.git#quickstart)
+* [Help](https://github.com/NCBI-Hackathons/Plasmitron.git#help)
+* [Inputs](https://github.com/NCBI-Hackathons/Plasmitron.git#inputs)
+* [Outputs](https://github.com/NCBI-Hackathons/Plasmitron.git#outputs)
+* [WorkFlow](https://github.com/NCBI-Hackathons/Plasmitron.git#workFlow)
 
 ## Intro
   ### Goal
@@ -17,7 +17,7 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
   ### Challenges: 
   Plasmid hunting with PacBio can be tricky especilly for small size plasmids. One reason is that size selection done as part of library preparation tends to remove fragments < 8kb. The other reason is that they are harder to detect in the assemblies because there will be a subset of reads that has multiple tandem copies of the same plasmid. That is somewhat mitigated by using e.g. circlator, but it still remains an issue.
   
-### Quickstart
+## Quickstart
    - Open terminal or connect to server
     
     git clone https://github.com/NCBI-Hackathons/Plasmitron.git
@@ -84,13 +84,13 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
     install.packages("biofiles")
     devtools::install_github("gschofl/biofiles")
 
-## Inputs description
+## Inputs
 
 1. Reference sequence for the bacterial genome. Download the fasta file for the sequenced species using NCBI. 
 2. Database for reference sequences for plasmids from the bacteria of interest.
 3. SRA number for the sequencing dataset or the relevant fasta/fastq file with the sequenced reads.
 
-## Outputs description
+## Outputs
 **file.txt**
 
 ## Workflow using minimap2 (example)
