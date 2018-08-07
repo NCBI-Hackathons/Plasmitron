@@ -14,7 +14,7 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
   ### Goal
   Retreive and visualize plasmid sequences from  dataset generated using Long Read sequencing technology.
   ### Challenges: 
-  Plasmid hunting with PacBio can be tricky especilly for small size plasmids. One reason is that size selection done as part of library preparation ususally removes fragments <8kb. The other reason is that they are harder to detect in the assemblies because there will be a subset of reads that has multiple tandem copies of the same plasmid. That is somewhat mitigated by using e.g. circlator, but it still remains an issue.
+  Plasmid hunting with PacBio can be tricky especilly for small size plasmids. One reason is that size selection done as part of library preparation tends to remove fragments < 8kb. The other reason is that they are harder to detect in the assemblies because there will be a subset of reads that has multiple tandem copies of the same plasmid. That is somewhat mitigated by using e.g. circlator, but it still remains an issue.
   
   
 ## Help
@@ -23,7 +23,7 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 2. magicBlast
 3. Blast
 4. R
-5. 
+5. minimap2
 
 ### Setup
    - Open terminal or connect to server
@@ -52,6 +52,12 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
     
     wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/magicblast/LATEST/ncbi-magicblast-1.3.0.dmg
     export PATH=$PATH:$<Path_to>/ncbi-magicblast-1.3.0/bin/
+
+**minimap2**
+   - Download precompiled binaries from the github respository using:
+    
+    curl -L https://github.com/lh3/minimap2/releases/download/v2.12/minimap2-2.12_x64-linux.tar.bz2 | tar -jxvf -
+    ./minimap2-2.12_x64-linux/minimap2
 
 **R**
    - Install R locally
