@@ -1,10 +1,10 @@
 # Plasmitron
-![My image](https://github.com/NCBI-Hackathons/Pathogenic_Pangenomes/blob/master/images/got_plasmid.png)
+![My image](https://github.com/NCBI-Hackathons/Plasmitron/blob/master/plasmids.png)
+
 Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 
-
  ## Table of Contents
-* [Quickstart](https://...)
+* [Quickstart](https://github.com/NCBI-Hackathons/Plasmitron.git#Quickstart)
 * [Intro](https://github.com/NCBI-Hackathons/Plasmitron.git#Intro)
 * [Help](https://github.com/NCBI-Hackathons/Plasmitron.git#Help)
 * [Inputs](https://github.com/NCBI-Hackathons/Plasmitron.git#Inputs)
@@ -17,6 +17,10 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
   ### Challenges: 
   Plasmid hunting with PacBio can be tricky especilly for small size plasmids. One reason is that size selection done as part of library preparation tends to remove fragments < 8kb. The other reason is that they are harder to detect in the assemblies because there will be a subset of reads that has multiple tandem copies of the same plasmid. That is somewhat mitigated by using e.g. circlator, but it still remains an issue.
   
+### Quickstart
+   - Open terminal or connect to server
+    
+    git clone https://github.com/NCBI-Hackathons/Plasmitron.git
   
 ## Help
 ### Dependencies
@@ -25,11 +29,6 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 3. Blast
 4. R
 5. minimap2
-
-### Setup
-   - Open terminal or connect to server
-    
-    git clone https://github.com/NCBI-Hackathons/Plasmitron.git
     
 **wget**
    - For mac use Homebrew
