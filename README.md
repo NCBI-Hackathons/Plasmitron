@@ -85,7 +85,10 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
     devtools::install_github("gschofl/biofiles")
 
 ## Inputs description
-**file.txt**
+
+1. Reference sequence for the bacterial genome. Download the fasta file for the sequenced species using NCBI. 
+2. Database for reference sequences for plasmids from the bacteria of interest.
+3. SRA number for the sequencing dataset or the relevant fasta/fastq file with the sequenced reads.
 
 ## Outputs description
 **file.txt**
