@@ -1,5 +1,5 @@
 # Plasmitron
-
+![My image](https://github.com/NCBI-Hackathons/Pathogenic_Pangenomes/blob/master/images/got_plasmid.png)
 Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 
 
