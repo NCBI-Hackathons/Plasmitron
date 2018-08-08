@@ -96,7 +96,8 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 3. SRA number for the sequencing dataset or the relevant fasta/fastq file with the sequenced reads.
 
 ## Outputs
-**file.txt**
+
+ 1. A list of potential plasmid sequences present in the dataset.
 
 ## Workflow
  
