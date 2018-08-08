@@ -119,7 +119,7 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
 
 ## Workflow
  
-![workflow](plasmids.png)
+![workflow](workflow.png)
 
  1. Obtain SRA dataset and extract fasta files using fastq-dump
         
