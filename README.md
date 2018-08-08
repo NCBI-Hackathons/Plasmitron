@@ -29,6 +29,8 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 3. Blast
 4. R
 5. minimap2
+6. fasterq-dump
+7. samtools
     
 **wget**
    - For mac use Homebrew
@@ -56,13 +58,22 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 **minimap2**
    - Download precompiled binaries from the github respository using:
     
-    wget https://github.com/lh3/minimap2/releases/download/v2.12/minimap2-2.12_x64-linux.tar.bz2 | tar -jxvf -
+    wget https://github.com/lh3/minimap2/releases/download/v2.12/minimap2-2.12_x64-linux.tar.bz2
+    tar -jxvf minimap2-2.12_x64-linux.tar.bz2
     ./minimap2-2.12_x64-linux/minimap2
 
 **fasterq-dump**
 
     wget --output-document sratoolkit.tar.gz http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz
     tar -vxzf sratoolkit.tar.gz
+
+**samtools 
+
+    wget https://github.com/samtools/samtools/releases/download/1.3.1/samtools-1.3.1.tar.bz2 -O samtools.tar.bz2
+    tar -xjvf samtools.tar.bz2
+    cd samtools-1.3.1
+    make
+    make prefix=/usr/local/bin install
 
 **R**
    - Install R locally
@@ -97,7 +108,7 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 
 ## Outputs
 
- 1. A list of potential plasmid sequences present in the dataset.
+ 1. A list of potential plasmid sequences present in the dataset, along with the coverage percentage.
 
 ## Workflow
  
@@ -108,11 +119,19 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 
  3. Obtain fasta sequence for reads that are unaligned against the bacterial genome using provided scripts under the "filter" folder. 
  
- 4. Align the filtered reads against the reference file made by concatinating all the plasmid reference sequences. Do this alignment using the minimap2 command as before. 
+ 4. Align the filtered reads against the reference file made by concatinating all the plasmid reference sequences. Do this alignment using a similar minimap2 command as before. You can use the option "--secondary=no" to avoid multi-mapping.
  
- 5. Check for plasmids that have a significant number of reads aligning against them. The cut-off for our dataset was '20':
+ 5. Check for plasmids that have a significant number of reads aligning against them. This will tell you which plasmids are of interest for further analysis. The cut-off for our dataset was '20'. Note that the detected plasmids may have high sequence similarity between them.
  
-        samtools view -S -F 4 <samfile> | awk '{print $3}' | sort | uniq -c | awk '{if ($1 > 20) print}'
+        samtools view -S -F 4 alignPlasmid.sam | awk '{print $3}' | sort | uniq -c | awk '{if ($1 > 20) print}'
+        
+ 6. Now to check for the number of bases covered by the reads within each plasmid, run the following steps to obtain a coverage estimate file using samtools:
+  
+        samtools view -Sb alignPlasmid.sam > alignPlasmid.bam
+        samtools sort alignPlasmid.bam alignPlasmid.sorted
+        samtools depth alignPlasmid.sorted.bam > alignPlasmid.depth
+        
+ 7. Given the depth file and the alignment samfile, run the script...
  
 ## WorkFlow
 
