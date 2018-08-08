@@ -134,17 +134,21 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
        
  2. Align against the bacterial chromosome using minimap2 where sequence.fasta is the reference:
     
-        minimap2-2.11_x64-linux/minimap2 -ax map-pb reference_sequence.fasta SRR<number>.fasta > chromAlign.sam
+        minimap2 -ax map-pb reference_sequence.fasta SRR<number>.fasta > chromAlign.sam
 
  3. Obtain fasta sequence for reads that are unaligned against the bacterial genome using provided scripts under the "script" folder. 
  
-        python getUnmappedSAM.py ../minimap_output/chromAlign.sam ../sra/SRR<number>.fasta ../minimap_output/<name_output>.fasta
+        python getUnmappedSAM.py ../minimap_output/chromAlign.sam ../sra/SRR<number>.fasta ../minimap_output/<name_Py_output>.fasta
  
- 4. Align the filtered reads against the reference file made by concatinating all the plasmid reference sequences. Do this alignment using a similar minimap2 command as before. You can use the option "--secondary=no" to avoid multi-mapping.
+ 4. Align the filtered reads against all concatinated plasmid reference sequences. Do this alignment using a similar minimap2 command as before. You can use the option "--secondary=no" to avoid multi-mapping.
+ 
+        cat plasmid_sequences* > concatenated_plasmids.fasta
+        minimap2 -ax map-pb ../plasmid_fasta/concatenated_plasmids.fasta <name_Py_output>.fasta > alignPlasmid.sam
+
  
  5. Check for plasmids that have a significant number of reads aligning against them. This will tell you which plasmids are of interest for further analysis. The cut-off for our dataset was '20'. Note that the detected plasmids may have high sequence similarity between them.
  
-        samtools view -S -F 4 alignPlasmid.sam | awk '{print $3}' | sort | uniq -c | awk '{if ($1 > 20) print}'
+        samtools view -S -F 4 alignPlasmid.sam | awk '{print $3}' | sort | uniq -c | awk '{if ($1 > 20) print}' > read_number_per_plasmids.txt
         
  6. Now to check for the number of bases covered by the reads within each plasmid, run the following steps to obtain a coverage estimate file using samtools:
   
