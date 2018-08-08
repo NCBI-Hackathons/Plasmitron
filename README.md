@@ -93,7 +93,7 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 ## Outputs
 **file.txt**
 
-## Workflow using minimap2 (example)
+## Workflow
  
  1. Obtain SRA (SRR7445584) dataset and extract fasta files using fasterq-dump
  2. Align against the bacterial chromosome using minimap2 where sequence.fasta is the reference:
