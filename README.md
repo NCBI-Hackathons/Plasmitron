@@ -106,10 +106,6 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
     But by far the easiest way to use it is via Docker
     * Install Docker: https://www.docker.com/
     * docker pull sangerpathogens/circlator
-    * docker run --rm -it -v /path/to/my/data:/data sangerpathogens/circlator \
-    circlator all /data/assembly.fasta /data/reads.fasta /data/output_directory \
-    (where 'assembly.fasta' is the name of the Canu assembly and 'reads.fasta' is \
-    the fasta file with raw reads)
 
 ## Inputs
 
@@ -160,9 +156,21 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
  
         python analyseDepth.py alignPlasmid.depth alignPlasmid.sam out_table.txt
         
- 8. 
+ 8. Run the Canu workflow to error-correct the reads and assemble the genomes of the bacterial species and plasmids in the sample. You can either run Canu on the entire set of reads, or run it separately on just the reads that map to each bacterial species/plasmid.
+        
+        # Error correction
+        canu -correct -p <prefix> -d corrected genomeSize=<genome_size> -pacbio-raw <reads.fasta>
+        # Trimming
+        canu -trim -p <prefix> -d trimmed genomeSize=<genome_size> -pacbio-corrected corrected/*.correctedReads.fast*
+        # Assembly
+        canu -assemble -p <prefix> -d assembled genomeSize=<genome_size> -pacbio-corrected trimmed/*.correctedReads.fast*
  
-
+9. Attempt to circularize the bacterial and plasmid genomes using Circlator. (This example assumes you're using Docker)
+        
+        # 'assembly.fasta' is the name of the Canu assembly and 'reads.fasta' is the fasta file with raw reads
+        docker run --rm -it -v /path/to/my/data:/data sangerpathogens/circlator circlator all \
+          /data/<assembly.fasta> /data/<reads.fasta> /data/output_directory
+    
 # ==============
 
 
