@@ -68,6 +68,26 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
     make
     make prefix=/usr/local/bin install
 
+**Canu**
+
+    If you are on linux or macOS:
+    * Download a release for your system from https://github.com/marbl/canu/releases
+    * Unpack: tar -xJf canu-1.7.1.Darwin-amd64.tar.xz
+    * Add the Canu bin folder to your path: export PATH=/path/to/canu/Darwin-amd64/bin:$PATH
+    
+    Otherwise, you must build from source:
+    * Download the source release from https://github.com/marbl/canu/releases
+    * Unpack: tar -xzf v1.7.1.tar.gz
+    * cd /path/to/canu/src
+    * make -j <threads> (where threads is an int >= 1)
+
+**Circlator**
+
+    The installation instructions for Circlator are here: http://sanger-pathogens.github.io/circlator/
+    But by far the easiest way to use it is via Docker
+    * Install Docker: https://www.docker.com/
+    * docker pull sangerpathogens/circlator
+    * docker run --rm -it -v /path/to/my/data:/data sangerpathogens/circlator circlator all /data/assembly.fasta /data/reads.fasta /data/output_directory (where 'assembly.fasta' is the name of the Canu assembly and 'reads.fasta' is the fasta file with raw reads)
 
 ## Inputs
 
