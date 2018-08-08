@@ -89,7 +89,8 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
     * docker pull sangerpathogens/circlator
     * docker run --rm -it -v /path/to/my/data:/data sangerpathogens/circlator \
     circlator all /data/assembly.fasta /data/reads.fasta /data/output_directory \
-    (where 'assembly.fasta' is the name of the Canu assembly and 'reads.fasta' is the fasta file with raw reads)
+    (where 'assembly.fasta' is the name of the Canu assembly and 'reads.fasta' is \
+    the fasta file with raw reads)
 
 ## Inputs
 
