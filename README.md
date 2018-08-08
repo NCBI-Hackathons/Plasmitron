@@ -40,7 +40,7 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
 7. samtools
 8. Python
 9. Canu
-10.Circulator
+10. Circulator
     
 **wget**
    - For mac use Homebrew
