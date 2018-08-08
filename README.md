@@ -48,13 +48,6 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
   
     $export BLASTDB=$<path_to>/blastdb
  
-**magicBLAST**
-   - Download system compatible magicBLAST version.
-  For MAC:
-    
-    wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/magicblast/LATEST/ncbi-magicblast-1.3.0.dmg
-    export PATH=$PATH:$<Path_to>/ncbi-magicblast-1.3.0/bin/
-
 **minimap2**
    - Download precompiled binaries from the github respository using:
     
@@ -67,7 +60,7 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
     wget --output-document sratoolkit.tar.gz http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz
     tar -vxzf sratoolkit.tar.gz
 
-**samtools 
+**samtools**
 
     wget https://github.com/samtools/samtools/releases/download/1.3.1/samtools-1.3.1.tar.bz2 -O samtools.tar.bz2
     tar -xjvf samtools.tar.bz2
@@ -75,30 +68,6 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
     make
     make prefix=/usr/local/bin install
 
-**R**
-   - Install R locally
-   
-    cd Path_to/Got_plasmid/
-    wget http://cran.rstudio.com/src/base/R-3/R-3.4.1.tar.gz 
-    tar -xzvf R-3.4.1.tar.gz 
-    cd R-3.4.1 
-     
-    ./configure --prefix=$HOME/R 
-    make && make install 
-    export PATH=$PATH:$HOME/R/bin
-    
-**R_modules**
-
-    R
-    source("https://bioconductor.org/biocLite.R")
-    biocLite("GenomicRanges")
-    biocLite("IRanges")
-    biocLite("Biostrings")
-    install.packages("data.table")
-    install.packages("reutils")
-    install.packages("devtools")
-    install.packages("biofiles")
-    devtools::install_github("gschofl/biofiles")
 
 ## Inputs
 
@@ -136,7 +105,6 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 ## WorkFlow
 
  1.  Create customized blast databases.
- 2.
 
 ### Step 1.
 # ------------------
@@ -161,23 +129,15 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
       
 ### Step 3. 
 # ------------------
-      # Use magicBlast on one SRRA versus individual plasmid databases.
-      # creates magicBlast output files in plasmids/magic_output/
 
 
 ### Step 4. 
 # ------------------
-      # Generate a table with the % of plasmid sequences covered by contigs.
-
 
 
 ### Step 5. 
 # ------------------
-      # Generate plasmid visualization
-
-
-
-
+   
 
 # ==============
 
