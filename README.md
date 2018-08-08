@@ -35,6 +35,7 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
 ### Dependencies
 1. wget
 3. Blast
+4. conda
 5. minimap2
 6. fasterq-dump
 7. samtools
@@ -58,12 +59,14 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
   
     $export BLASTDB=$<path_to>/blastdb
  
+**conda**
+       
+    wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+    bash Miniconda3-latest-MacOSX-x86_64.sh
+
 **minimap2**
-   - Download precompiled binaries from the github respository using:
-    
-    wget https://github.com/lh3/minimap2/releases/download/v2.12/minimap2-2.12_x64-linux.tar.bz2
-    tar -jxvf minimap2-2.12_x64-linux.tar.bz2
-    ./minimap2-2.12_x64-linux/minimap2
+   
+    conda install -c bioconda minimap2  
 
 **fasterq-dump**
 
