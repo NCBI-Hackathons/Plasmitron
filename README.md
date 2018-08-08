@@ -136,7 +136,9 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
     
         minimap2-2.11_x64-linux/minimap2 -ax map-pb reference_sequence.fasta SRR<number>.fasta > chromAlign.sam
 
- 3. Obtain fasta sequence for reads that are unaligned against the bacterial genome using provided scripts under the "filter" folder. 
+ 3. Obtain fasta sequence for reads that are unaligned against the bacterial genome using provided scripts under the "script" folder. 
+ 
+        python getUnmappedSAM.py ../minimap_output/chromAlign.sam ../sra/SRR<number>.fasta ../minimap_output/<name_output>.fasta
  
  4. Align the filtered reads against the reference file made by concatinating all the plasmid reference sequences. Do this alignment using a similar minimap2 command as before. You can use the option "--secondary=no" to avoid multi-mapping.
  
