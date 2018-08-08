@@ -100,8 +100,11 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
     
         minimap2-2.11_x64-linux/minimap2 -ax map-pb sequence.fasta SRR7445584.fasta > chromAlign.sam
 
- 3. Obtain fasta sequence for reads that are unaligned against the bacterial genome using provided scripts. 
- 4. 
+ 3. Obtain fasta sequence for reads that are unaligned against the bacterial genome using provided scripts under the "filter" folder. 
+ 
+ 4. Align the filtered reads against the reference file made by concatinating all the plasmid reference sequences. Do this alignment using the minimap2 command as before. 
+ 
+ 5. Check for plasmids that have a significant number of reads aligning against them. The cut-off for our dataset was '20'.
  
 ## WorkFlow
 
