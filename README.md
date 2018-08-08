@@ -12,10 +12,19 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 * [WorkFlow](https://github.com/NCBI-Hackathons/Plasmitron.git#workFlow)
 
 ## Intro
-  ### Goal
-  Retreive and visualize plasmid sequences from  dataset generated using Long Read sequencing technology.
-  ### Challenges: 
-  Plasmid hunting with PacBio can be tricky especilly for small size plasmids. One reason is that size selection done as part of library preparation tends to remove fragments < 8kb. The other reason is that they are harder to detect in the assemblies because there will be a subset of reads that has multiple tandem copies of the same plasmid. That is somewhat mitigated by using e.g. circlator, but it still remains an issue.
+### Goal
+Retreive and visualize plasmid sequences from  dataset generated using Long Read sequencing technology.
+### Challenges: 
+Plasmid hunting with PacBio can be tricky especilly for small size plasmids. One reason is that size selection done as part of library preparation tends to remove fragments < 8kb. The other reason is that they are harder to detect in the assemblies because there will be a subset of reads that has multiple tandem copies of the same plasmid. That is somewhat mitigated by using e.g. circlator, but it still remains an issue.
+
+### Why study plasmid diversity?
+Plasmid discovery and characterization are important goals for clinical genomic analysis because almost all bacterial strains harbor at least one plasmid with potentially syndrome- and tissue-specific functions. 
+ 
+### Plasmid diversity in NCBI.
+As of August 2018,  18702 plasmid sequences have been identified and deposited in the US National Center for Biotechnology and Information (NCBI) Refseq database.  With the ease and speed of whole genome sequencing, new plasmid are discovered every day, highlighting the impressive breadth of plasmid diversity.
+
+### The Advantage to study Plasmid diversity using PacBio. 
+The extent and importance of plasmid contribution to pathogenesis is largely under-appreciated. This is mainly due to the complications inherent to their identification, analysis and characterization. Plasmid are rich in repetitive sequences. As such and in theory, long read sequencing technology is the most appropriate technique to study plasmid genomics.
   
 ## Quickstart
    - Open terminal or connect to server
@@ -25,12 +34,13 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 ## Help
 ### Dependencies
 1. wget
-2. magicBlast
 3. Blast
-4. R
 5. minimap2
 6. fasterq-dump
 7. samtools
+8. Python
+9. Canu
+10.Circulator
     
 **wget**
    - For mac use Homebrew
@@ -171,13 +181,4 @@ The proliferation of S. aureus genomic sequences in public databases reflects st
 
 Staphylococcal MGE encompass any intra- or extra-chromosomal DNA segment that can be independently mobilized within or between S. aureus cells. It includes plasmids, transposons, integrons, genomic islands, S. aureus pathogenicity islands (SaPIs), integrative conjugative elements, staphylococcal chromosome cassettes, and phages. Together, phages and plasmids are the main source of MGE diversity among S. aureus strains. 
 
-### Why study Staphylococcus aureus plasmid diversity?
-MGE discovery and characterization are important goals for clinical genomic analysis because almost all S. aureus strains harbor at least one plasmid with potentially syndrome- and tissue-specific functions. 
- 
-### Plasmid diversity in NCBI.
- As of August 2017,  327 unique plasmid sequences have been identified and deposited in the US National Center for Biotechnology and Information (NCBI) database.  With the ease and speed of whole genome sequencing, new MGE are discovered every day, highlighting the impressive breadth of S. aureus plasmid diversity. There are ~40,000 primary (unannotated) S. aureus datasets in the Sequence Read Archive (SRA). 
 
-### The challenge to study MGE diversity. 
-The extent and importance of plasmid contribution to S. aureus pathogenesis is largely under-appreciated. This is mainly due to the complications inherent to their identification, analysis and characterization. 
- 
-Plasmid are rich in repetitive sequences. High level of sequence identity facilitates genetic recombination and contributes to the emergence of mosaic MGE. As such, MGE are ever-changing and can be hard to identify. Moreover, nomenclature in public databases is constantly evolving and inconsistency in annotation among MGE is common and complicates functional inter- and intra-species analyses. 
