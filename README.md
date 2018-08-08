@@ -104,7 +104,9 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
  
  4. Align the filtered reads against the reference file made by concatinating all the plasmid reference sequences. Do this alignment using the minimap2 command as before. 
  
- 5. Check for plasmids that have a significant number of reads aligning against them. The cut-off for our dataset was '20'.
+ 5. Check for plasmids that have a significant number of reads aligning against them. The cut-off for our dataset was '20':
+ 
+        samtools view -S -F 4 <samfile> | awk '{print $3}' | sort | uniq -c | awk '{if ($1 > 20) print}'
  
 ## WorkFlow
 
