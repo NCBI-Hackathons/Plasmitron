@@ -37,7 +37,7 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
 3. Blast
 4. conda
 5. minimap2
-6. fasterq-dump
+6. fastq-dump
 7. samtools
 8. Python
 9. Canu
@@ -68,7 +68,7 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
    
     conda install -c bioconda minimap2  
 
-**fasterq-dump**
+**fastq-dump**
 
     wget --output-document sratoolkit.tar.gz http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz
     tar -vxzf sratoolkit.tar.gz
@@ -117,7 +117,11 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
 
 ## Workflow
  
- 1. Obtain SRA (SRR7445584) dataset and extract fasta files using fasterq-dump
+ 1. Obtain SRA (SRR7445584) dataset and extract fasta files using fastq-dump
+ 
+        wget ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR744/SRR7445584/SRR7445584.sra
+        fastq-dump -fasta 0 SRR7445584.sra
+       
  2. Align against the bacterial chromosome using minimap2 where sequence.fasta is the reference:
     
         minimap2-2.11_x64-linux/minimap2 -ax map-pb sequence.fasta SRR7445584.fasta > chromAlign.sam
