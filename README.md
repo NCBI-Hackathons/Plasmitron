@@ -153,7 +153,7 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
  6. Now to check for the number of bases covered by the reads within each plasmid, run the following steps to obtain a coverage estimate file using samtools:
   
         samtools view -Sb alignPlasmid.sam > alignPlasmid.bam
-        samtools sort alignPlasmid.bam alignPlasmid.sorted
+        samtools sort alignPlasmid.bam -o alignPlasmid.sorted
         samtools depth alignPlasmid.sorted.bam > alignPlasmid.depth
         
  7. Given the depth file and the alignment samfile, run the script provided in folder "analyse" to obtain the final table:
