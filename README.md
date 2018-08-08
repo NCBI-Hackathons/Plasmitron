@@ -133,7 +133,9 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
         samtools sort alignPlasmid.bam alignPlasmid.sorted
         samtools depth alignPlasmid.sorted.bam > alignPlasmid.depth
         
- 7. Given the depth file and the alignment samfile, run the script...
+ 7. Given the depth file and the alignment samfile, run the script provided in folder "analyse" to obtain the final table:
+ 
+        python analyseDepth.py alignPlasmid.depth alignPlasmid.sam out_table.txt
  
 ## WorkFlow
 
