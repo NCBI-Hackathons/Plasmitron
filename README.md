@@ -123,18 +123,18 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
 
 ## Workflow
  
- 1. Obtain SRA (SRR7445584) dataset and extract fasta files using fastq-dump
+ 1. Obtain SRA dataset and extract fasta files using fastq-dump
         
-        fastq-dump -fasta 0 SRR7445584
+        fastq-dump -fasta 0 SRR<number>
         
    Or
     
         wget ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR744/SRR7445584/SRR7445584.sra
-        fastq-dump -fasta 0 SRR7445584.sra
+        fastq-dump -fasta 0 SRR<number>.sra
        
  2. Align against the bacterial chromosome using minimap2 where sequence.fasta is the reference:
     
-        minimap2-2.11_x64-linux/minimap2 -ax map-pb sequence.fasta SRR7445584.fasta > chromAlign.sam
+        minimap2-2.11_x64-linux/minimap2 -ax map-pb reference_sequence.fasta SRR<number>.fasta > chromAlign.sam
 
  3. Obtain fasta sequence for reads that are unaligned against the bacterial genome using provided scripts under the "filter" folder. 
  
