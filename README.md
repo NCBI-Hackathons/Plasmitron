@@ -79,7 +79,7 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
     tar -xjvf samtools.tar.bz2
     cd samtools-1.3.1
     make
-    make prefix=/usr/local/bin install
+    make install
 
 **Canu**
 
