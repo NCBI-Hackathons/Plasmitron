@@ -159,43 +159,9 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
  7. Given the depth file and the alignment samfile, run the script provided in folder "analyse" to obtain the final table:
  
         python analyseDepth.py alignPlasmid.depth alignPlasmid.sam out_table.txt
+        
+ 8. 
  
-## WorkFlow
-
- 1.  Create customized blast databases.
-
-### Step 1.
-# ------------------
-    
-      # Retrieve plasmid fasta.
-      # creates plasmid fasta sequences in plasmids/fasta
-
-      # from NCBI website, go to Nucleotide database:
-      # plasmid[title] AND staphylococcus[title]
-      # Filters: Species = bacteria
-      # Filters: Molecule types = genomic RNA/DNA
-      # Filters: Genetic compartments = Plasmid
-      # download accession table
-      # save as "accession_plasmids.txt" in /plasmids/assembly_ID/
-
-
-### Step 2. 
-# ------------------
-      # Create customized blast databases.
-      # use makeblastdb
-
-      
-### Step 3. 
-# ------------------
-
-
-### Step 4. 
-# ------------------
-
-
-### Step 5. 
-# ------------------
-   
 
 # ==============
 
