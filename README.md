@@ -3,6 +3,12 @@
 
 Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 
+**Contributors**
+
+Laraib Malik
+Rick Copin
+John Didion
+
  ## Table of Contents
 * [Intro](https://github.com/NCBI-Hackathons/Plasmitron.git#intro)
 * [Quickstart](https://github.com/NCBI-Hackathons/Plasmitron.git#quickstart)
@@ -118,7 +124,11 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
 ## Workflow
  
  1. Obtain SRA (SRR7445584) dataset and extract fasta files using fastq-dump
- 
+        
+        fastq-dump -fasta 0 SRR7445584
+        
+   Or
+    
         wget ftp://ftp-trace.ncbi.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR744/SRR7445584/SRR7445584.sra
         fastq-dump -fasta 0 SRR7445584.sra
        
@@ -189,5 +199,3 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
 The proliferation of S. aureus genomic sequences in public databases reflects strong interest in understanding S. aureus genome diversity and evolution. With an average of 2,800 coding sequences, it is estimated that 44% of S. aureus genes are NOT shared by all S. aureus strains. These genes constitute the  ‘accessory genome’, which is variable between strains and mostly made of mobile genetic elements (MGE) enriched in hypothetical proteins. 
 
 Staphylococcal MGE encompass any intra- or extra-chromosomal DNA segment that can be independently mobilized within or between S. aureus cells. It includes plasmids, transposons, integrons, genomic islands, S. aureus pathogenicity islands (SaPIs), integrative conjugative elements, staphylococcal chromosome cassettes, and phages. Together, phages and plasmids are the main source of MGE diversity among S. aureus strains. 
-
-
