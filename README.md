@@ -87,7 +87,9 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
     But by far the easiest way to use it is via Docker
     * Install Docker: https://www.docker.com/
     * docker pull sangerpathogens/circlator
-    * docker run --rm -it -v /path/to/my/data:/data sangerpathogens/circlator circlator all /data/assembly.fasta /data/reads.fasta /data/output_directory (where 'assembly.fasta' is the name of the Canu assembly and 'reads.fasta' is the fasta file with raw reads)
+    * docker run --rm -it -v /path/to/my/data:/data sangerpathogens/circlator \
+    circlator all /data/assembly.fasta /data/reads.fasta /data/output_directory \
+    (where 'assembly.fasta' is the name of the Canu assembly and 'reads.fasta' is the fasta file with raw reads)
 
 ## Inputs
 
