@@ -56,8 +56,13 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 **minimap2**
    - Download precompiled binaries from the github respository using:
     
-    curl -L https://github.com/lh3/minimap2/releases/download/v2.12/minimap2-2.12_x64-linux.tar.bz2 | tar -jxvf -
+    wget https://github.com/lh3/minimap2/releases/download/v2.12/minimap2-2.12_x64-linux.tar.bz2 | tar -jxvf -
     ./minimap2-2.12_x64-linux/minimap2
+
+**fasterq-dump**
+
+    wget --output-document sratoolkit.tar.gz http://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz
+    tar -vxzf sratoolkit.tar.gz
 
 **R**
    - Install R locally
