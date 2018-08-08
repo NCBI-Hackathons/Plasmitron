@@ -161,7 +161,7 @@ The extent and importance of plasmid contribution to pathogenesis is largely und
  8. Run the Canu workflow to error-correct the reads and assemble the genomes of the bacterial species and plasmids in the sample. You can either run Canu on the entire set of reads, or run it separately on just the reads that map to each bacterial species/plasmid.
         
         # Error correction
-        canu -correct -p <prefix> -d corrected genomeSize=<genome_size> -pacbio-raw <reads.fasta>
+        canu -correct -p <prefix> -d corrected gnuplotTested=true genomeSize=<genome_size> -pacbio-raw ../sra/<reads.fasta> 
         # Trimming
         canu -trim -p <prefix> -d trimmed genomeSize=<genome_size> -pacbio-corrected corrected/*.correctedReads.fast*
         # Assembly
