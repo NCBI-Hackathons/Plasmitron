@@ -5,9 +5,9 @@ Identification of Plasmids from Pacbio Long Read Bacterial Sequences
 
 **Contributors**
 
-Laraib Malik
-Rick Copin
-John Didion
+  Laraib Malik
+  Rick Copin
+  John Didion
 
  ## Table of Contents
 * [Intro](https://github.com/NCBI-Hackathons/Plasmitron.git#intro)
